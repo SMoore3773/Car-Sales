@@ -31,7 +31,14 @@ export const newreducer = (state = initialState, action) => {
 
             }
         case 'REMOVE_OPTION':
-            return{
+            console.log('state in remove option case', state)
+            console.log('action in remove option case', action)
+            return{ ...state,
+                additionalPrice: state.additionalPrice - action.payload.price,
+                car: {...state.car,
+                    features: state.car.features.filter(item => item.id !== action.payload.id)
+                },
+                additionalFeatures:[...state.additionalFeatures, action.payload]
 
             }
             default:
