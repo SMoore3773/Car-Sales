@@ -10,6 +10,8 @@ import {addOption, removeOption} from './actions';
 
 const App = (props) => {
   console.log('props in app',props)
+  
+  //******** Initial state moved to the reducer component \|/ */
   // const state = {
   //   additionalPrice: 0,
   //   car: {
@@ -27,6 +29,8 @@ const App = (props) => {
   //   ]
   // };
 
+  //functions that call actions to add and remove items. 
+  //These are connected to the index.js in the actions folder and act as dispatches for their respective functions.
   const removeFeature = item => {
     props.removeOption(item)
   };
@@ -35,6 +39,7 @@ const App = (props) => {
     props.addOption(item);
   };
 
+  //on the components the buyItem and removeFeature functions are passed through to their respective components
   return (
     <div className="boxes">
       <div className="box">
@@ -49,6 +54,7 @@ const App = (props) => {
   );
 };
 
+//this is mapping state to the props for this component so that when we reference props in sending information to the components we are sending a state object and not the actual base object.
 const mapStateToProps = state =>{
   console.log('state in map state to props', state)
   return{
@@ -58,4 +64,5 @@ const mapStateToProps = state =>{
   };
 };
 
+// here we connect our mapStateToProps function, and in addition this is where we have the addOption and removeOption found in the actions folder.
 export default connect(mapStateToProps,{addOption, removeOption})(App);

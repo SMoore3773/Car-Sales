@@ -7,6 +7,7 @@ import {newreducer} from './reducers/newreducer';
 import 'bulma/css/bulma.css';
 import './styles.scss';
 
+//state Store and Provider created here to assure that every component within App has access to the store and state that it holds.
 const store = createStore(newreducer)
 
 const rootElement = document.getElementById('root');

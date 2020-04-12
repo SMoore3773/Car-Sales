@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+//see addedFeature for comment
 const AdditionalFeature = props => {
   // console.log('props in additional feature component', props)
   return (

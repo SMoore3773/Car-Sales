@@ -1,6 +1,6 @@
 import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
-
+//see addedFeatures for comment
 const AdditionalFeatures = props => {
   // console.log('props in additional featureS', props)
   return (
